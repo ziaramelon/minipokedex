@@ -1,9 +1,133 @@
 {
   "team": [
     {
-      "id": "4460",
-      "name": "ivysaur",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+      "id": "f1ee",
+      "name": "venusaur",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 80
+        },
+        {
+          "name": "attack",
+          "base": 82
+        },
+        {
+          "name": "defense",
+          "base": 83
+        },
+        {
+          "name": "special-attack",
+          "base": 100
+        },
+        {
+          "name": "special-defense",
+          "base": 100
+        },
+        {
+          "name": "speed",
+          "base": 80
+        }
+      ]
+    },
+    {
+      "id": "a546",
+      "name": "charmander",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 39
+        },
+        {
+          "name": "attack",
+          "base": 52
+        },
+        {
+          "name": "defense",
+          "base": 43
+        },
+        {
+          "name": "special-attack",
+          "base": 60
+        },
+        {
+          "name": "special-defense",
+          "base": 50
+        },
+        {
+          "name": "speed",
+          "base": 65
+        }
+      ]
+    },
+    {
+      "id": "32aa",
+      "name": "charizard",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 78
+        },
+        {
+          "name": "attack",
+          "base": 84
+        },
+        {
+          "name": "defense",
+          "base": 78
+        },
+        {
+          "name": "special-attack",
+          "base": 109
+        },
+        {
+          "name": "special-defense",
+          "base": 85
+        },
+        {
+          "name": "speed",
+          "base": 100
+        }
+      ]
+    },
+    {
+      "id": "61ab",
+      "name": "squirtle",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 44
+        },
+        {
+          "name": "attack",
+          "base": 48
+        },
+        {
+          "name": "defense",
+          "base": 65
+        },
+        {
+          "name": "special-attack",
+          "base": 50
+        },
+        {
+          "name": "special-defense",
+          "base": 64
+        },
+        {
+          "name": "speed",
+          "base": 43
+        }
+      ]
+    },
+    {
+      "id": "a46e",
+      "name": "butterfree",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png",
       "stats": [
         {
           "name": "hp",
@@ -11,15 +135,15 @@
         },
         {
           "name": "attack",
-          "base": 62
+          "base": 45
         },
         {
           "name": "defense",
-          "base": 63
+          "base": 50
         },
         {
           "name": "special-attack",
-          "base": 80
+          "base": 90
         },
         {
           "name": "special-defense",
@@ -27,26 +151,26 @@
         },
         {
           "name": "speed",
+          "base": 70
+        }
+      ]
+    },
+    {
+      "id": "6a67",
+      "name": "arbok",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/24.png",
+      "stats": [
+        {
+          "name": "hp",
           "base": 60
-        }
-      ]
-    },
-    {
-      "id": "f9a2",
-      "name": "bulbasaur",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-      "stats": [
-        {
-          "name": "hp",
-          "base": 45
         },
         {
           "name": "attack",
-          "base": 49
+          "base": 95
         },
         {
           "name": "defense",
-          "base": 49
+          "base": 69
         },
         {
           "name": "special-attack",
@@ -54,42 +178,11 @@
         },
         {
           "name": "special-defense",
-          "base": 65
+          "base": 79
         },
         {
           "name": "speed",
-          "base": 45
-        }
-      ]
-    },
-    {
-      "id": "d6eb",
-      "name": "jigglypuff",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/39.png",
-      "stats": [
-        {
-          "name": "hp",
-          "base": 115
-        },
-        {
-          "name": "attack",
-          "base": 45
-        },
-        {
-          "name": "defense",
-          "base": 20
-        },
-        {
-          "name": "special-attack",
-          "base": 45
-        },
-        {
-          "name": "special-defense",
-          "base": 25
-        },
-        {
-          "name": "speed",
-          "base": 20
+          "base": 80
         }
       ]
     }
