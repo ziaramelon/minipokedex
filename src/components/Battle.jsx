@@ -8,6 +8,20 @@ const typeColors = {
   water: "bg-blue-500",
   grass: "bg-green-500",
   electric: "bg-yellow-400",
+  normal: "bg-gray-400",
+  fighting: "bg-orange-700",
+  flying: "bg-indigo-300",
+  poison: "bg-purple-500",
+  ground: "bg-yellow-600",
+  rock: "bg-yellow-800",
+  bug: "bg-lime-500",
+  ghost: "bg-purple-700",
+  steel: "bg-gray-500",
+  psychic: "bg-pink-500",
+  ice: "bg-blue-200",
+  dragon: "bg-indigo-600",
+  dark: "bg-gray-800",
+  fairy: "bg-pink-300",
 };
 
 const Battle = () => {
@@ -17,18 +31,70 @@ const Battle = () => {
   const [poke2, setPoke2] = useState(null);
   const [battleResults, setBattleResults] = useState([]);
   const [overallWinner, setOverallWinner] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
+  // Load data on component mount
   useEffect(() => {
-    axios.get("http://localhost:3001/team").then((res) => setTeam(res.data));
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon?limit=151")
-      .then(async (res) => {
+    // Check for saved battle data in localStorage
+    const loadSavedState = () => {
+      try {
+        const savedBattle = localStorage.getItem("pokemonBattle");
+        if (savedBattle) {
+          const parsedData = JSON.parse(savedBattle);
+          if (parsedData.poke1) setPoke1(parsedData.poke1);
+          if (parsedData.poke2) setPoke2(parsedData.poke2);
+          if (parsedData.battleResults)
+            setBattleResults(parsedData.battleResults);
+          if (parsedData.overallWinner)
+            setOverallWinner(parsedData.overallWinner);
+        }
+      } catch (error) {
+        console.error("Error loading saved battle state:", error);
+      }
+    };
+
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        // Fetch team data
+        const teamResponse = await axios.get("http://localhost:3001/team");
+        setTeam(teamResponse.data);
+
+        // Fetch all Pokemon data
+        const pokemonResponse = await axios.get(
+          "https://pokeapi.co/api/v2/pokemon?limit=151"
+        );
         const detailedData = await Promise.all(
-          res.data.results.map((p) => axios.get(p.url).then((r) => r.data))
+          pokemonResponse.data.results.map((p) =>
+            axios.get(p.url).then((r) => r.data)
+          )
         );
         setAllPokemon(detailedData);
-      });
+
+        // Load saved state after we have the Pokemon data
+        loadSavedState();
+      } catch (error) {
+        console.error("Error fetching Pokemon data:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
+
+  // Save battle state to localStorage whenever it changes
+  useEffect(() => {
+    if (poke1 || poke2 || battleResults.length > 0) {
+      const battleState = {
+        poke1,
+        poke2,
+        battleResults,
+        overallWinner,
+      };
+      localStorage.setItem("pokemonBattle", JSON.stringify(battleState));
+    }
+  }, [poke1, poke2, battleResults, overallWinner]);
 
   const selectPokemonFromDropdown = (name, setter) => {
     const selected = allPokemon.find((p) => p.name === name);
@@ -100,6 +166,15 @@ const Battle = () => {
     }
   };
 
+  // Reset the battle state
+  const resetBattle = () => {
+    setPoke1(null);
+    setPoke2(null);
+    setBattleResults([]);
+    setOverallWinner("");
+    localStorage.removeItem("pokemonBattle");
+  };
+
   const renderCard = (pokemon) => {
     if (!pokemon) return null;
     return (
@@ -110,7 +185,7 @@ const Battle = () => {
           }`}
         >
           <img
-            src={pokemon.sprites.front_default}
+            src={pokemon.sprites.other["official-artwork"].front_default}
             className="w-48 cursor-pointer"
             alt={pokemon.name}
           />
@@ -152,6 +227,16 @@ const Battle = () => {
     );
   };
 
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-64">
+        <div className="animate-bounce text-xl font-bold text-yellow-500">
+          Loading Pokémon...
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto lg:px-16">
       <h2 className="text-2xl font-bold my-4 text-center">Battle Simulation</h2>
@@ -160,17 +245,20 @@ const Battle = () => {
         {/* Your Team */}
         <div className="space-y-2 text-center">
           <h1 className="text-bold text-xl">Your Team</h1>
-          {!poke1 && <img src={Pokelogo} className="w-72" alt="" />}
+          {!poke1 && <img src={Pokelogo} className="w-72" alt="Pokemon Logo" />}
           {renderCard(poke1)}
           <select
             className="select select-bordered border-2 border-yellow-200"
             onChange={(e) =>
               selectPokemonFromDropdown(e.target.value, setPoke1)
             }
+            value={poke1?.name || ""}
           >
-            <option>Select Your Pokémon</option>
+            <option value="">Select Your Pokémon</option>
             {team.map((p) => (
-              <option key={p.id}>{p.name}</option>
+              <option key={p.id} value={p.name}>
+                {p.name}
+              </option>
             ))}
           </select>
         </div>
@@ -181,7 +269,7 @@ const Battle = () => {
         {/* Enemy Team */}
         <div className="space-y-2 text-center">
           <h1 className="text-bold text-xl">Enemy Team</h1>
-          {!poke2 && <img src={Pokelogo} className="w-72" alt="" />}
+          {!poke2 && <img src={Pokelogo} className="w-72" alt="Pokemon Logo" />}
           {renderCard(poke2)}
           <div className="flex items-center gap-2 justify-center">
             <select
@@ -189,10 +277,13 @@ const Battle = () => {
               onChange={(e) =>
                 selectPokemonFromDropdown(e.target.value, setPoke2)
               }
+              value={poke2?.name || ""}
             >
-              <option>Select Enemy Pokémon</option>
+              <option value="">Select Enemy Pokémon</option>
               {allPokemon.map((p) => (
-                <option key={p.name}>{p.name}</option>
+                <option key={p.name} value={p.name}>
+                  {p.name}
+                </option>
               ))}
             </select>
             <button
@@ -205,20 +296,34 @@ const Battle = () => {
         </div>
       </div>
 
-      {/* Fight Button */}
-      <div className="flex justify-center mt-6">
+      {/* Action Buttons */}
+      <div className="flex justify-center gap-4 mt-6">
         <button
           onClick={simulateBattle}
-          className="btn bg-yellow-400 hover:bg-yellow-500 btn-lg text-black border-none"
+          disabled={!poke1 || !poke2}
+          className={`btn btn-lg text-black border-none ${
+            !poke1 || !poke2
+              ? "bg-gray-300 cursor-not-allowed"
+              : "bg-yellow-400 hover:bg-yellow-500"
+          }`}
         >
           Fight
         </button>
+
+        {(poke1 || poke2 || battleResults.length > 0) && (
+          <button
+            onClick={resetBattle}
+            className="btn bg-red-500 hover:bg-red-600 text-white btn-lg border-none"
+          >
+            Reset
+          </button>
+        )}
       </div>
 
       {/* Battle Logs */}
       {battleResults.length > 0 && (
-        <div className="overflow-x-auto mt-4 border border-yellow-400">
-          <table className="table table-zebra">
+        <div className="overflow-x-auto mt-6 border border-yellow-400 rounded-lg shadow-md">
+          <table className="table table-zebra w-full">
             <thead className="bg-yellow-400">
               <tr className="text-black">
                 <th>Round</th>
@@ -233,20 +338,20 @@ const Battle = () => {
                 <tr key={round.round}>
                   <th>{round.round}</th>
                   <td>{round.stat}</td>
-                  <td>
+                  <td className="capitalize">
                     {round.player.name} ({round.player.value})
                   </td>
-                  <td>
+                  <td className="capitalize">
                     {round.enemy.name} ({round.enemy.value})
                   </td>
                   <td
-                    className={
+                    className={`capitalize ${
                       round.winner === poke1?.name
-                        ? "text-success"
+                        ? "text-green-600 font-bold"
                         : round.winner === poke2?.name
-                        ? "text-error"
+                        ? "text-red-600 font-bold"
                         : "text-gray-500"
-                    }
+                    }`}
                   >
                     {round.winner}
                   </td>
@@ -254,9 +359,10 @@ const Battle = () => {
               ))}
             </tbody>
           </table>
-          <p className="text-lg mt-2 font-medium text-center border-y border-t-2 py-1 border-yellow-400">
-            Winner: {overallWinner}
-          </p>
+          <div className="text-lg p-2 font-medium text-center border-t-2 border-yellow-400 bg-yellow-50">
+            Winner:{" "}
+            <span className="capitalize font-bold">{overallWinner}</span>
+          </div>
         </div>
       )}
     </div>

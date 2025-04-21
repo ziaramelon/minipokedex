@@ -63,37 +63,6 @@
       ]
     },
     {
-      "id": "32aa",
-      "name": "charizard",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
-      "stats": [
-        {
-          "name": "hp",
-          "base": 78
-        },
-        {
-          "name": "attack",
-          "base": 84
-        },
-        {
-          "name": "defense",
-          "base": 78
-        },
-        {
-          "name": "special-attack",
-          "base": 109
-        },
-        {
-          "name": "special-defense",
-          "base": 85
-        },
-        {
-          "name": "speed",
-          "base": 100
-        }
-      ]
-    },
-    {
       "id": "61ab",
       "name": "squirtle",
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
@@ -154,127 +123,105 @@
           "base": 90
         }
       ]
+    },
+    {
+      "id": "fe71",
+      "name": "bulbasaur",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 45
+        },
+        {
+          "name": "attack",
+          "base": 49
+        },
+        {
+          "name": "defense",
+          "base": 49
+        },
+        {
+          "name": "special-attack",
+          "base": 65
+        },
+        {
+          "name": "special-defense",
+          "base": 65
+        },
+        {
+          "name": "speed",
+          "base": 45
+        }
+      ]
+    },
+    {
+      "id": "3bfa",
+      "name": "tentacool",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/72.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 40
+        },
+        {
+          "name": "attack",
+          "base": 40
+        },
+        {
+          "name": "defense",
+          "base": 35
+        },
+        {
+          "name": "special-attack",
+          "base": 50
+        },
+        {
+          "name": "special-defense",
+          "base": 100
+        },
+        {
+          "name": "speed",
+          "base": 70
+        }
+      ]
     }
   ],
   "battles": [
     {
-      "id": "90ca",
-      "pokemon1": "charizard",
-      "pokemon2": "exeggcute",
-      "result": "charizard, You Win!",
-      "date": "2025-04-21T19:05:53.680Z"
+      "id": "9e94",
+      "pokemon1": "clefairy",
+      "pokemon2": "wigglytuff",
+      "result": "wigglytuff, You Lose!",
+      "date": "2025-04-21T20:03:54.137Z"
     },
     {
-      "id": "9d8b",
-      "pokemon1": "butterfree",
-      "pokemon2": "onix",
-      "result": "butterfree, You Win!",
-      "date": "2025-04-21T19:06:18.738Z"
-    },
-    {
-      "id": "4902",
-      "pokemon1": "squirtle",
-      "pokemon2": "growlithe",
-      "result": "growlithe, You Lose!",
-      "date": "2025-04-21T19:06:42.079Z"
-    },
-    {
-      "id": "6da2",
-      "pokemon1": "charmander",
-      "pokemon2": "rattata",
-      "result": "rattata, You Lose!",
-      "date": "2025-04-21T19:06:57.112Z"
-    },
-    {
-      "id": "12ae",
-      "pokemon1": "charmander",
-      "pokemon2": "jynx",
-      "result": "jynx, You Lose!",
-      "date": "2025-04-21T19:07:27.353Z"
-    },
-    {
-      "id": "feaa",
-      "pokemon1": "butterfree",
-      "pokemon2": "abra",
-      "result": "butterfree, You Win!",
-      "date": "2025-04-21T19:12:58.421Z"
-    },
-    {
-      "id": "d0d8",
+      "id": "4e42",
       "pokemon1": "pikachu",
-      "pokemon2": "kadabra",
-      "result": "kadabra, You Lose!",
-      "date": "2025-04-21T19:16:24.563Z"
+      "pokemon2": "seadra",
+      "result": "seadra, You Lose!",
+      "date": "2025-04-21T20:05:39.652Z"
     },
     {
-      "id": "62dd",
-      "pokemon1": "venusaur",
-      "pokemon2": "nidoran-f",
-      "result": "venusaur, You Win!",
-      "date": "2025-04-21T19:20:16.625Z"
-    },
-    {
-      "id": "7aee",
+      "id": "5904",
       "pokemon1": "pikachu",
-      "pokemon2": "raichu",
-      "result": "raichu, You Lose!",
-      "date": "2025-04-21T19:20:58.668Z"
+      "pokemon2": "dewgong",
+      "result": "dewgong, You Lose!",
+      "date": "2025-04-21T20:05:47.515Z"
     },
     {
-      "id": "36f6",
-      "pokemon1": "charizard",
-      "pokemon2": "grimer",
-      "result": "charizard, You Win!",
-      "date": "2025-04-21T19:22:48.239Z"
-    },
-    {
-      "id": "5ff1",
-      "pokemon1": "charmander",
-      "pokemon2": "rattata",
-      "result": "rattata, You Lose!",
-      "date": "2025-04-21T19:31:24.178Z"
-    },
-    {
-      "id": "c966",
-      "pokemon1": "charmander",
-      "pokemon2": "horsea",
-      "result": "charmander, You Win!",
-      "date": "2025-04-21T19:31:54.590Z"
-    },
-    {
-      "id": "dd1e",
-      "pokemon1": "charizard",
-      "pokemon2": "nidorina",
-      "result": "charizard, You Win!",
-      "date": "2025-04-21T19:36:52.662Z"
-    },
-    {
-      "id": "c8ba",
-      "pokemon1": "squirtle",
-      "pokemon2": "abra",
-      "result": "squirtle, You Win!",
-      "date": "2025-04-21T19:37:07.921Z"
-    },
-    {
-      "id": "015f",
+      "id": "1099",
       "pokemon1": "pikachu",
-      "pokemon2": "nidorina",
-      "result": "nidorina, You Lose!",
-      "date": "2025-04-21T19:41:34.314Z"
+      "pokemon2": "kakuna",
+      "result": "pikachu, You Win!",
+      "date": "2025-04-21T20:05:58.344Z"
     },
     {
-      "id": "fe59",
-      "pokemon1": "pikachu",
-      "pokemon2": "hypno",
-      "result": "hypno, You Lose!",
-      "date": "2025-04-21T19:41:55.102Z"
-    },
-    {
-      "id": "77fd",
-      "pokemon1": "charizard",
-      "pokemon2": "wartortle",
-      "result": "charizard, You Win!",
-      "date": "2025-04-21T19:49:15.116Z"
+      "id": "55bf",
+      "pokemon1": "tentacool",
+      "pokemon2": "charmander",
+      "result": "tentacool, You Win!",
+      "date": "2025-04-21T20:13:34.413Z"
     }
   ]
 }

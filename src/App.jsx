@@ -28,7 +28,7 @@ function App() {
               <Link to="/battle">Battle</Link>
             </li>
             <li>
-              <Link to="/history">Battle History</Link>
+              <Link to="/history">History</Link>
             </li>
           </ul>
         </div>
@@ -64,7 +64,7 @@ function App() {
               <Link to="/battle">Battle</Link>
             </li>
             <li>
-              <Link to="/history">Battle History</Link>
+              <Link to="/history">History</Link>
             </li>
           </ul>
         </div>

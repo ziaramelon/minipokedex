@@ -23,14 +23,14 @@ const History = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Battle History</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center my-4">Battle History</h2>
 
-      <button
+      {/* <button
         onClick={fetchBattleHistory}
         className="btn btn-sm mb-4 bg-yellow-400 hover:bg-yellow-500 text-black border-none"
       >
         Refresh History
-      </button>
+      </button> */}
 
       {battles.length === 0 ? (
         <p>No battles recorded yet.</p>
@@ -39,14 +39,14 @@ const History = () => {
           {battles.map((battle) => (
             <div
               key={battle.id}
-              className="bg-base-200 p-4 rounded-lg shadow border border-base-300"
+              className="bg-base-200 p-4 rounded-lg shadow border border-base-300 md:flex md:items-center md:justify-between lg:justify-around"
             >
-              <div className="text-lg font-semibold">
+              <div className="text-lg font-semibold w-56">
                 {battle.pokemon1} vs {battle.pokemon2}
               </div>
-              <div className="text-sm text-base-content/70">
+              <div className="text-sm text-base-content/70 w-48">
                 Result:{" "}
-                <span className="font-medium text-primary">
+                <span className="font-medium text-primary w-48">
                   {battle.result}
                 </span>
               </div>
