@@ -1,0 +1,127 @@
+{
+  "team": [
+    {
+      "id": "4460",
+      "name": "ivysaur",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 60
+        },
+        {
+          "name": "attack",
+          "base": 62
+        },
+        {
+          "name": "defense",
+          "base": 63
+        },
+        {
+          "name": "special-attack",
+          "base": 80
+        },
+        {
+          "name": "special-defense",
+          "base": 80
+        },
+        {
+          "name": "speed",
+          "base": 60
+        }
+      ]
+    },
+    {
+      "id": "f9a2",
+      "name": "bulbasaur",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 45
+        },
+        {
+          "name": "attack",
+          "base": 49
+        },
+        {
+          "name": "defense",
+          "base": 49
+        },
+        {
+          "name": "special-attack",
+          "base": 65
+        },
+        {
+          "name": "special-defense",
+          "base": 65
+        },
+        {
+          "name": "speed",
+          "base": 45
+        }
+      ]
+    },
+    {
+      "id": "d6eb",
+      "name": "jigglypuff",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/39.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 115
+        },
+        {
+          "name": "attack",
+          "base": 45
+        },
+        {
+          "name": "defense",
+          "base": 20
+        },
+        {
+          "name": "special-attack",
+          "base": 45
+        },
+        {
+          "name": "special-defense",
+          "base": 25
+        },
+        {
+          "name": "speed",
+          "base": 20
+        }
+      ]
+    }
+  ],
+  "battles": [
+    {
+      "id": "5711",
+      "pokemon1": "venusaur",
+      "pokemon2": "venusaur",
+      "result": "Draw",
+      "date": "2025-04-20T10:01:48.671Z"
+    },
+    {
+      "id": "a6d7",
+      "pokemon1": "squirtle",
+      "pokemon2": "squirtle",
+      "result": "squirtle",
+      "date": "2025-04-20T10:02:00.004Z"
+    },
+    {
+      "id": "265e",
+      "pokemon1": "butterfree",
+      "pokemon2": "venusaur",
+      "result": "venusaur",
+      "date": "2025-04-20T10:02:19.755Z"
+    },
+    {
+      "id": "603b",
+      "pokemon1": "ivysaur",
+      "pokemon2": "bulbasaur",
+      "result": "ivysaur",
+      "date": "2025-04-20T11:52:12.934Z"
+    }
+  ]
+}
