@@ -2,7 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import TeamPage from "./pages/TeamPage";
 import BattlePage from "./pages/BattlePage";
-import Logo from "./assets/logo.png";
+import History from "./pages/History";
 import Pokeball from "./assets/pokeball.png";
 
 function App() {
@@ -26,6 +26,9 @@ function App() {
             </li>
             <li>
               <Link to="/battle">Battle</Link>
+            </li>
+            <li>
+              <Link to="/history">Battle History</Link>
             </li>
           </ul>
         </div>
@@ -60,6 +63,9 @@ function App() {
             <li>
               <Link to="/battle">Battle</Link>
             </li>
+            <li>
+              <Link to="/history">Battle History</Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -67,6 +73,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/battle" element={<BattlePage />} />
+        <Route path="/history" element={<History />} />
       </Routes>
     </>
   );
