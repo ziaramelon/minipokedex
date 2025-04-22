@@ -1,11 +1,15 @@
+import Header from "../components/Header";
 import React from "react";
 import Team from "../components/Team";
 
 const TeamPage = () => {
   return (
-    <div className="p-4">
-      <Team />
-    </div>
+    <>
+      <Header />
+      <div className="p-4">
+        <Team />
+      </div>
+    </>
   );
 };
 
