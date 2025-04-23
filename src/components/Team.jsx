@@ -6,7 +6,7 @@ const typeColors = {
   fire: "bg-red-500",
   water: "bg-blue-500",
   electric: "bg-yellow-400",
-  grass: "bg-green-500",
+  grass: "bg-custom",
   ice: "bg-cyan-300",
   fighting: "bg-orange-700",
   poison: "bg-purple-600",
@@ -27,7 +27,7 @@ const typeLightColors = {
   fire: "bg-red-200",
   water: "bg-blue-200",
   electric: "bg-yellow-200",
-  grass: "bg-green-200",
+  grass: "bg-custom",
   ice: "bg-cyan-100",
   fighting: "bg-orange-200",
   poison: "bg-purple-200",
@@ -125,7 +125,7 @@ const Team = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4 mt-4 text-center">
+      <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center font-serif mt-8 text-yellow-400">
         My Pokémon Team
       </h2>
       {team.length === 0 ? (
@@ -143,142 +143,181 @@ const Team = () => {
             return (
               <div
                 key={pokemon.id}
-                className="card bg-yellow-200 shadow-md p-2 w-64"
+                className={`card shadow-md p-2 w-64 rounded-3xl ${figureBg}`}
                 onClick={() =>
                   document.getElementById(`modal-${p.id}`).showModal()
                 }
               >
-                <figure className={`rounded-t-lg ${figureBg}`}>
+                <figure className="rounded-t-3xl bg-w flex-col pt-6">
                   <img
                     src={
                       pokemon.sprites.other["official-artwork"].front_default
                     }
-                    className="w-48 cursor-pointer"
+                    className="w-36 cursor-pointer"
                     alt={pokemon.name}
                   />
+                  <div className="w-full px-4 mt-2">
+                    <hr />
+                  </div>
                 </figure>
-                <div className="card-body bg-white rounded-b-lg">
-                  <h2 className="card-title capitalize">{pokemon.name}</h2>
-                  <div className="flex flex-wrap gap-2 mb-2">
+                <div className="card-body pt-4 bg-w rounded-b-3xl">
+                  <div>
+                    <span className="text-num font-pixel text-2xl font-medium">
+                      #{pokemon.id.toString().padStart(4, "0")}
+                    </span>
+                    <h2 className="card-title capitalize font-bold text-2xl">
+                      {pokemon.name}
+                    </h2>
+                  </div>
+                  <div className="flex flex-wrap justify-between mb-2">
                     {pokemon.types.map((t) => (
                       <span
                         key={t.type.name}
-                        className={`badge text-white ${
+                        className={`rounded-full text-white capitalize px-6 py-0 font-medium ${
                           typeColors[t.type.name]
                         }`}
                       >
-                        {t.type.name.toUpperCase()}
+                        {t.type.name}
                       </span>
                     ))}
                   </div>
 
                   {/* Modal */}
                   <dialog id={`modal-${p.id}`} className="modal">
-                    <div className={`modal-box ${modalBg}`}>
-                      <form method="dialog">
-                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                          ✕
-                        </button>
-                      </form>
-                      <p className="capitalize font-bold text-xl text-center bg-white mt-4 rounded-lg">
-                        {pokemon.name}{" "}
-                        <span className="text-slate-400">
-                          #{pokemon.id.toString().padStart(4, "0")}
-                        </span>
-                      </p>
+                    <div
+                      className={`modal-box ${modalBg} max-w-max p-3 rounded-3xl`}
+                    >
+                      <div className="bg-w px-4 pt-2 rounded-3xl relative">
+                        <form method="dialog">
+                          <button className="btn btn-sm btn-circle btn-ghost absolute right-0 top-0">
+                            ✕
+                          </button>
+                        </form>
+                        {/* <p className="capitalize font-bold text-xl text-center border">
+                          {pokemon.name}{" "}
+                          <span className="text-slate-400">
+                            #{pokemon.id.toString().padStart(4, "0")}
+                          </span>
+                        </p> */}
 
-                      <div className="mt-2 md:flex md:gap-4 md:justify-center">
-                        <figure className={`rounded-lg ${figureBg}`}>
-                          <img
-                            src={
-                              pokemon.sprites.other["official-artwork"]
-                                .front_default
-                            }
-                            className="w-48"
-                            alt={pokemon.name}
-                          />
-                        </figure>
+                        {/* Wrapper */}
+                        <div className="mt-2 md:flex md:gap-4 md:justify-center">
+                          <figure className="">
+                            <img
+                              src={
+                                pokemon.sprites.other["official-artwork"]
+                                  .front_default
+                              }
+                              className="w-48"
+                              alt={pokemon.name}
+                            />
+                          </figure>
 
-                        <div>
-                          <div className="bg-white rounded-lg mt-2 px-4 py-2">
-                            <p className="font-semibold mb-2 text-base">
-                              Types
+                          {/* Info */}
+                          <div>
+                            {/* name */}
+                            <p className="capitalize font-bold text-3xl text-center md:text-left flex flex-col md:px-4">
+                              <span className="text-num font-pixel text-2xl font-medium">
+                                #{pokemon.id.toString().padStart(4, "0")}
+                              </span>
+                              {pokemon.name}{" "}
                             </p>
-                            <div className="flex gap-2 flex-wrap">
-                              {pokemon.types.map((t) => (
-                                <span
-                                  key={t.type.name}
-                                  className={`badge text-white ${
-                                    typeColors[t.type.name]
-                                  }`}
-                                >
-                                  {t.type.name.toUpperCase()}
-                                </span>
-                              ))}
+                            <div className="md:w-1/2 px-4 mt-4">
+                              <hr />
                             </div>
-                          </div>
 
-                          <div className="bg-white rounded-lg mt-2 px-4 py-2">
-                            <p className="font-semibold mb-2 text-base">
-                              Base Stats
-                            </p>
-                            <div className="space-y-1">
-                              {pokemon.stats.map((stat) => (
-                                <div
-                                  key={stat.stat.name}
-                                  className="flex items-center justify-between gap-2"
-                                >
-                                  <p className="w-32 text-sm font-medium capitalize">
-                                    {stat.stat.name}
+                            {/* stats */}
+                            <div className="md:flex">
+                              {/* types and weakness */}
+                              <div className="md:flex md:flex-col md:justify-between">
+                                {/* types */}
+                                <div className="mt-2 px-4 py-2">
+                                  <p className="font-semibold mb-2 text-base font-pix md:text-lg">
+                                    TYPES
                                   </p>
-                                  <progress
-                                    className="progress w-full"
-                                    value={stat.base_stat}
-                                    max="200"
-                                  ></progress>
-                                  <p className="w-10 text-sm text-right">
-                                    {stat.base_stat}
-                                  </p>
+                                  <div className="flex gap-2 flex-wrap">
+                                    {pokemon.types.map((t) => (
+                                      <span
+                                        key={t.type.name}
+                                        className={`rounded-full text-white capitalize px-6 py-0 font-medium ${
+                                          typeColors[t.type.name]
+                                        }`}
+                                      >
+                                        {t.type.name}
+                                      </span>
+                                    ))}
+                                  </div>
                                 </div>
-                              ))}
-                            </div>
-                          </div>
+                                {/* Weakness */}
+                                <div className="mt-2 px-4 py-2">
+                                  <p className="font-semibold mb-2 text-base font-pix md:text-lg">
+                                    WEAKNESSES
+                                  </p>
+                                  <div className="flex flex-wrap gap-2 md:grid md:grid-cols-2">
+                                    {pokemonDetails[p.name].weaknesses.length >
+                                    0 ? (
+                                      pokemonDetails[p.name].weaknesses.map(
+                                        (type) => (
+                                          <span
+                                            key={type}
+                                            className={`rounded-full text-white capitalize px-6 py-0 font-medium ${
+                                              typeColors[type] || "bg-gray-400"
+                                            }`}
+                                          >
+                                            {type}
+                                          </span>
+                                        )
+                                      )
+                                    ) : (
+                                      <p className="text-sm text-gray-500 italic">
+                                        Loading...
+                                      </p>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
 
-                          <div className="bg-white rounded-lg mt-2 px-4 py-2">
-                            <p className="font-semibold mb-2 text-base">
-                              Weaknesses
-                            </p>
-                            <div className="flex flex-wrap gap-2">
-                              {pokemonDetails[p.name].weaknesses.length > 0 ? (
-                                pokemonDetails[p.name].weaknesses.map(
-                                  (type) => (
-                                    <span
-                                      key={type}
-                                      className={`badge text-white ${
-                                        typeColors[type] || "bg-gray-400"
-                                      }`}
-                                    >
-                                      {type.toUpperCase()}
-                                    </span>
-                                  )
-                                )
-                              ) : (
-                                <p className="text-sm text-gray-500 italic">
-                                  Loading...
+                              {/* battle stats */}
+                              <div className="mt-2 px-4 py-2 md:w-72">
+                                <p className="font-semibold mb-2 text-base font-pix md:text-lg">
+                                  BATTLE STATS
                                 </p>
-                              )}
+                                <div className="space-y-1">
+                                  {pokemon.stats.map((stat) => (
+                                    <div
+                                      key={stat.stat.name}
+                                      className="flex items-center justify-between gap-2"
+                                    >
+                                      <p className="w-full text-sm font-medium capitalize">
+                                        {stat.stat.name}
+                                      </p>
+                                      <progress
+                                        className="progress progress-accent w-full"
+                                        value={stat.base_stat}
+                                        max="200"
+                                      ></progress>
+                                      <p className="w-10 text-sm text-right">
+                                        {stat.base_stat}
+                                      </p>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                            <div className="grid place-items-center">
+                              {/* Remove from Team Button */}
+                              <button
+                                onClick={() => removeFromTeam(p.id)}
+                                className="btn bg-button text-w text-pix md:text-base hover:bg-red-500 border-none btn-sm mt-4 w-1/2 rounded-lg mb-4"
+                              >
+                                Remove from Team
+                              </button>
                             </div>
                           </div>
                         </div>
-                      </div>
 
-                      {/* Remove from Team Button */}
-                      <button
-                        onClick={() => removeFromTeam(p.id)}
-                        className="btn bg-red-400 hover:bg-red-500 text-white border-none btn-sm mt-4 w-full"
-                      >
-                        Remove from Team
-                      </button>
+                        
+                      </div>
                     </div>
                   </dialog>
                 </div>

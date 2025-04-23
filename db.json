@@ -92,6 +92,37 @@
           "base": 80
         }
       ]
+    },
+    {
+      "id": "cd6c",
+      "name": "ekans",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/23.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 35
+        },
+        {
+          "name": "attack",
+          "base": 60
+        },
+        {
+          "name": "defense",
+          "base": 44
+        },
+        {
+          "name": "special-attack",
+          "base": 40
+        },
+        {
+          "name": "special-defense",
+          "base": 54
+        },
+        {
+          "name": "speed",
+          "base": 55
+        }
+      ]
     }
   ],
   "battles": [
@@ -143,6 +174,34 @@
       "pokemon2": "kabuto",
       "result": "pikachu, You Win!",
       "date": "2025-04-22T03:23:39.525Z"
+    },
+    {
+      "id": "8bd9",
+      "pokemon1": "ivysaur",
+      "pokemon2": "pidgeotto",
+      "result": "pidgeotto, You Lose!",
+      "date": "2025-04-23T09:25:55.113Z"
+    },
+    {
+      "id": "8c93",
+      "pokemon1": "ivysaur",
+      "pokemon2": "victreebel",
+      "result": "victreebel, You Lose!",
+      "date": "2025-04-23T09:47:00.200Z"
+    },
+    {
+      "id": "a29e",
+      "pokemon1": "venusaur",
+      "pokemon2": "articuno",
+      "result": "articuno, You Lose!",
+      "date": "2025-04-23T09:52:56.254Z"
+    },
+    {
+      "id": "15a2",
+      "pokemon1": "ivysaur",
+      "pokemon2": "horsea",
+      "result": "ivysaur, You Win!",
+      "date": "2025-04-23T10:02:47.802Z"
     }
   ]
 }

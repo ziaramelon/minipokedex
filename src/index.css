@@ -1,21 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allura&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
 
 @import "tailwindcss";
 @plugin "daisyui";
 
 @theme {
-    --font-pokemon: "Fredoka One", "cursive";
-    --font-allura: "Allura", "cursive";
-    --font-pixel: "VT323", monospace;
-    --font-pix: "Jersery 10", sans-serif;
-    /* --font-pokemon: "Fredoka", sans-serif; */
-    --color-custom: #00c49c;
-    --color-body: #b6e0f3;
+  --font-pokemon: "Fredoka One", "cursive";
+  --font-allura: "Allura", "cursive";
+  --font-pixel: "VT323", monospace;
+  --font-pix: "Jersery 10", sans-serif;
+  /* --font-pokemon: "Fredoka", sans-serif; */
+  --color-custom: #00c49c;
+  --color-body: #b6e0f3;
+  --color-input: #005b52;
+  --color-w: #e2f5ff;
+  --color-num: #b7aca3;
+  --color-button: #d62f16;
 }
 
-body {
-    @apply font-pokemon;
+@layer utilities {
+  .typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid #fbbf24;
+    animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #fbbf24;
+    }
+  }
 }
