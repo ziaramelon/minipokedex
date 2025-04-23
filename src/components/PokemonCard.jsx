@@ -230,7 +230,7 @@ const PokemonCard = ({ url }) => {
                             weaknesses.map((type) => (
                               <span
                                 key={type}
-                                className={`rounded-full text-white capitalize px-6 py-0 font-medium ${
+                                className={`text-center rounded-full text-white capitalize px-6 py-0 font-medium ${
                                   typeColors[type] || "bg-gray-400"
                                 }`}
                               >

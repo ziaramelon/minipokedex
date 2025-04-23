@@ -263,7 +263,7 @@ const Battle = () => {
             <img 
               src={loseImg} 
               alt="LOSE" 
-              className="w-full transform rotate-[-20deg] z-10"
+              className="w-full transform rotate-[-20deg] z-2"
               style={{ 
                 maxWidth: "120%", 
                 marginLeft: "-10%", 

@@ -32,37 +32,6 @@
       ]
     },
     {
-      "id": "5238",
-      "name": "ivysaur",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
-      "stats": [
-        {
-          "name": "hp",
-          "base": 60
-        },
-        {
-          "name": "attack",
-          "base": 62
-        },
-        {
-          "name": "defense",
-          "base": 63
-        },
-        {
-          "name": "special-attack",
-          "base": 80
-        },
-        {
-          "name": "special-defense",
-          "base": 80
-        },
-        {
-          "name": "speed",
-          "base": 60
-        }
-      ]
-    },
-    {
       "id": "f675",
       "name": "venusaur",
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
@@ -123,51 +92,71 @@
           "base": 55
         }
       ]
+    },
+    {
+      "id": "eeed",
+      "name": "butterfree",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 60
+        },
+        {
+          "name": "attack",
+          "base": 45
+        },
+        {
+          "name": "defense",
+          "base": 50
+        },
+        {
+          "name": "special-attack",
+          "base": 90
+        },
+        {
+          "name": "special-defense",
+          "base": 80
+        },
+        {
+          "name": "speed",
+          "base": 70
+        }
+      ]
+    },
+    {
+      "id": "a6d0",
+      "name": "pikachu",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 35
+        },
+        {
+          "name": "attack",
+          "base": 55
+        },
+        {
+          "name": "defense",
+          "base": 40
+        },
+        {
+          "name": "special-attack",
+          "base": 50
+        },
+        {
+          "name": "special-defense",
+          "base": 50
+        },
+        {
+          "name": "speed",
+          "base": 90
+        }
+      ]
     }
   ],
   "battles": [
-    {
-      "id": "9e94",
-      "pokemon1": "clefairy",
-      "pokemon2": "wigglytuff",
-      "result": "wigglytuff, You Lose!",
-      "date": "2025-04-21T20:03:54.137Z"
-    },
-    {
-      "id": "4e42",
-      "pokemon1": "pikachu",
-      "pokemon2": "seadra",
-      "result": "seadra, You Lose!",
-      "date": "2025-04-21T20:05:39.652Z"
-    },
-    {
-      "id": "5904",
-      "pokemon1": "pikachu",
-      "pokemon2": "dewgong",
-      "result": "dewgong, You Lose!",
-      "date": "2025-04-21T20:05:47.515Z"
-    },
-    {
-      "id": "1099",
-      "pokemon1": "pikachu",
-      "pokemon2": "kakuna",
-      "result": "pikachu, You Win!",
-      "date": "2025-04-21T20:05:58.344Z"
-    },
-    {
-      "id": "55bf",
-      "pokemon1": "tentacool",
-      "pokemon2": "charmander",
-      "result": "tentacool, You Win!",
-      "date": "2025-04-21T20:13:34.413Z"
-    },
-    {
-      "id": "e8ef",
-      "pokemon1": "squirtle",
-      "pokemon2": "spearow",
-      "result": "spearow, You Lose!",
-      "date": "2025-04-21T20:21:35.041Z"
-    },
     {
       "id": "e994",
       "pokemon1": "pikachu",
@@ -202,6 +191,48 @@
       "pokemon2": "horsea",
       "result": "ivysaur, You Win!",
       "date": "2025-04-23T10:02:47.802Z"
+    },
+    {
+      "id": "f84f",
+      "pokemon1": "ekans",
+      "pokemon2": "nidoran-f",
+      "result": "ekans, You Win!",
+      "date": "2025-04-23T10:25:14.252Z"
+    },
+    {
+      "id": "b5f1",
+      "pokemon1": "ekans",
+      "pokemon2": "caterpie",
+      "result": "ekans, You Win!",
+      "date": "2025-04-23T10:31:17.144Z"
+    },
+    {
+      "id": "7e58",
+      "pokemon1": "pikachu",
+      "pokemon2": "pidgeotto",
+      "result": "pidgeotto, You Lose!",
+      "date": "2025-04-23T10:34:51.878Z"
+    },
+    {
+      "id": "3390",
+      "pokemon1": "venusaur",
+      "pokemon2": "venusaur",
+      "result": "It's a Draw!",
+      "date": "2025-04-23T11:36:23.267Z"
+    },
+    {
+      "id": "0019",
+      "pokemon1": "bulbasaur",
+      "pokemon2": "bulbasaur",
+      "result": "It's a Draw!",
+      "date": "2025-04-23T13:58:05.795Z"
+    },
+    {
+      "id": "76eb",
+      "pokemon1": "venusaur",
+      "pokemon2": "bulbasaur",
+      "result": "venusaur, You Win!",
+      "date": "2025-04-23T13:59:35.347Z"
     }
   ]
 }

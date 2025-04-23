@@ -56,6 +56,52 @@ const History = () => {
             Refresh
           </button>
         </div>
+        {/* Battle Count Summary */}
+        {battles.length > 0 && (
+          <div className="mb-8 bg-yellow-50 p-6 rounded-3xl shadow-md border-2 border-yellow-100">
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">
+              Battle Statistics
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow text-center">
+                <p className="text-gray-600 font-medium">Total Battles</p>
+                <p className="text-4xl font-bold text-yellow-500">
+                  {battles.length}
+                </p>
+              </div>
+              <div className="bg-white p-4 rounded-xl shadow text-center">
+                <p className="text-gray-600 font-medium">Victories</p>
+                <p className="text-4xl font-bold text-green-500">
+                  {
+                    battles.filter((b) =>
+                      b.result.toLowerCase().includes("you win")
+                    ).length
+                  }
+                </p>
+              </div>
+              <div className="bg-white p-4 rounded-xl shadow text-center">
+                <p className="text-gray-600 font-medium">Defeats</p>
+                <p className="text-4xl font-bold text-red-500">
+                  {
+                    battles.filter((b) =>
+                      b.result.toLowerCase().includes("you lose")
+                    ).length
+                  }
+                </p>
+              </div>
+              <div className="bg-white p-4 rounded-xl shadow text-center">
+                <p className="text-gray-600 font-medium">Draw</p>
+                <p className="text-4xl font-bold text-black">
+                  {
+                    battles.filter((b) =>
+                      b.result.toLowerCase().includes("draw")
+                    ).length
+                  }
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
 
         {isLoading ? (
           <div className="flex justify-center items-center h-64">
@@ -75,7 +121,7 @@ const History = () => {
             {battles.map((battle) => {
               const resultStatus = getResultStatus(battle.result);
               const winner = extractWinner(battle.result);
-              
+
               return (
                 <div
                   key={battle.id}
@@ -96,12 +142,18 @@ const History = () => {
                     </div>
 
                     {/* Result */}
-                    <div className={`
+                    <div
+                      className={`
                       text-lg font-bold rounded-full py-2 px-6 
-                      ${resultStatus === 'win' ? 'bg-green-100 text-green-800' : 
-                        resultStatus === 'lose' ? 'bg-red-100 text-red-800' : 
-                        'bg-gray-100 text-gray-800'}
-                    `}>
+                      ${
+                        resultStatus === "win"
+                          ? "bg-green-100 text-green-800"
+                          : resultStatus === "lose"
+                          ? "bg-red-100 text-red-800"
+                          : "bg-gray-100 text-gray-800"
+                      }
+                    `}
+                    >
                       Winner: <span className="capitalize">{winner}</span>
                     </div>
 
@@ -113,31 +165,6 @@ const History = () => {
                 </div>
               );
             })}
-          </div>
-        )}
-
-        {/* Battle Count Summary */}
-        {battles.length > 0 && (
-          <div className="mt-8 bg-yellow-50 p-6 rounded-3xl shadow-md border-2 border-yellow-100">
-            <h3 className="text-2xl font-bold mb-4 text-gray-800">Battle Statistics</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white p-4 rounded-xl shadow text-center">
-                <p className="text-gray-600 font-medium">Total Battles</p>
-                <p className="text-4xl font-bold text-yellow-500">{battles.length}</p>
-              </div>
-              <div className="bg-white p-4 rounded-xl shadow text-center">
-                <p className="text-gray-600 font-medium">Victories</p>
-                <p className="text-4xl font-bold text-green-500">
-                  {battles.filter(b => b.result.toLowerCase().includes("you win")).length}
-                </p>
-              </div>
-              <div className="bg-white p-4 rounded-xl shadow text-center">
-                <p className="text-gray-600 font-medium">Defeats</p>
-                <p className="text-4xl font-bold text-red-500">
-                  {battles.filter(b => b.result.toLowerCase().includes("you lose")).length}
-                </p>
-              </div>
-            </div>
           </div>
         )}
       </div>
