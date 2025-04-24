@@ -62,7 +62,7 @@ const Home = () => {
     <>
       <Header />
       <div className="p-4 flex flex-col items-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center font-serif mt-8 text-yellow-400">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center font-pixel text-shadow-lg mt-8 text-yellow-400">
           Pokédex
         </h1>
 
@@ -72,16 +72,15 @@ const Home = () => {
             placeholder="Search Pokémon"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full font-pix"
+            className="w-full"
           />
         </label>
 
         {loading ? (
           <div className="flex flex-col items-center justify-center h-64">
             <div className="animate-bounce text-xl font-bold text-yellow-400 mb-2">
-              Loading Pokémon...
+              <span className="loading loading-spinner text-warning"></span>
             </div>
-            
           </div>
         ) : displayedPokemons.length === 0 ? (
           <div className="text-center py-10">

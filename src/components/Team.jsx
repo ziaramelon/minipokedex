@@ -125,7 +125,7 @@ const Team = () => {
 
   return (
     <div>
-      <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center font-serif mt-8 text-yellow-400">
+      <h2 className="text-4xl md:text-6xl font-bold mb-6 text-center font-pixel text-shadow-lg mt-8 text-yellow-400">
         My Pokémon Team
       </h2>
       {team.length === 0 ? (
@@ -162,10 +162,10 @@ const Team = () => {
                 </figure>
                 <div className="card-body pt-4 bg-w rounded-b-3xl">
                   <div>
-                    <span className="text-num font-pixel text-2xl font-medium">
+                    <span className="text-num font-pixel text-xs font-medium md:text-sm">
                       #{pokemon.id.toString().padStart(4, "0")}
                     </span>
-                    <h2 className="card-title capitalize font-bold text-2xl">
+                    <h2 className="card-title capitalize font-bold text-2xl md:text-3xl">
                       {pokemon.name}
                     </h2>
                   </div>
@@ -216,8 +216,8 @@ const Team = () => {
                           {/* Info */}
                           <div>
                             {/* name */}
-                            <p className="capitalize font-bold text-3xl text-center md:text-left flex flex-col md:px-4">
-                              <span className="text-num font-pixel text-2xl font-medium">
+                            <p className="capitalize font-bold text-center md:text-left flex flex-col md:px-4 text-2xl md:text-3xl">
+                              <span className="text-num font-pixel text-xs font-medium md:text-sm">
                                 #{pokemon.id.toString().padStart(4, "0")}
                               </span>
                               {pokemon.name}{" "}
@@ -232,7 +232,7 @@ const Team = () => {
                               <div className="md:flex md:flex-col md:justify-between">
                                 {/* types */}
                                 <div className="mt-2 px-4 py-2">
-                                  <p className="font-semibold mb-2 text-base font-pix md:text-lg">
+                                  <p className="font-semibold mb-2 text-xs font-pix md:text-sm">
                                     TYPES
                                   </p>
                                   <div className="flex gap-2 flex-wrap">
@@ -250,10 +250,10 @@ const Team = () => {
                                 </div>
                                 {/* Weakness */}
                                 <div className="mt-2 px-4 py-2">
-                                  <p className="font-semibold mb-2 text-base font-pix md:text-lg">
+                                  <p className="font-semibold mb-2 text-xs font-pix md:text-sm">
                                     WEAKNESSES
                                   </p>
-                                  <div className="flex flex-wrap gap-2 md:grid md:grid-cols-2">
+                                  <div className="flex flex-wrap gap-x-2 gap-y-4 md:grid md:grid-cols-2">
                                     {pokemonDetails[p.name].weaknesses.length >
                                     0 ? (
                                       pokemonDetails[p.name].weaknesses.map(
@@ -279,7 +279,7 @@ const Team = () => {
 
                               {/* battle stats */}
                               <div className="mt-2 px-4 py-2 md:w-72">
-                                <p className="font-semibold mb-2 text-base font-pix md:text-lg">
+                                <p className="font-semibold mb-2 text-xs font-pix md:text-sm">
                                   BATTLE STATS
                                 </p>
                                 <div className="space-y-1">
@@ -308,9 +308,9 @@ const Team = () => {
                               {/* Remove from Team Button */}
                               <button
                                 onClick={() => removeFromTeam(p.id)}
-                                className="btn bg-button text-w text-pix md:text-base hover:bg-red-500 border-none btn-sm mt-4 w-1/2 rounded-lg mb-4"
+                                className="btn bg-button text-w text-xs md:text-lg hover:bg-red-500 border-none btn-sm mt-4 w-1/2 rounded-lg mb-4 font-bold tracking-wider"
                               >
-                                Remove from Team
+                                Remove Team
                               </button>
                             </div>
                           </div>

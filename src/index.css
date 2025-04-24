@@ -1,16 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Allura&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 @import "tailwindcss";
 @plugin "daisyui";
 
 @theme {
-  --font-pokemon: "Fredoka One", "cursive";
-  --font-allura: "Allura", "cursive";
-  --font-pixel: "VT323", monospace;
-  --font-pix: "Jersery 10", sans-serif;
+  --font-pixel: "Russo One", sans-serif;
+  --font-pix: "Press Start 2P", system-ui;
   /* --font-pokemon: "Fredoka", sans-serif; */
   --color-custom: #00c49c;
   --color-body: #b6e0f3;

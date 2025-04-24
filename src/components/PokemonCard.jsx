@@ -136,10 +136,10 @@ const PokemonCard = ({ url }) => {
       </figure>
       <div className="card-body pt-4 bg-w rounded-b-3xl">
         <div>
-          <span className="text-num font-pixel text-2xl font-medium">
+          <span className="text-num font-pixel text-xs font-medium md:text-sm">
             #{pokemon.id.toString().padStart(4, "0")}
           </span>
-          <h2 className="card-title capitalize font-bold text-2xl">
+          <h2 className="card-title capitalize font-bold text-2xl md:text-3xl">
             {pokemon.name}
           </h2>
         </div>
@@ -188,8 +188,8 @@ const PokemonCard = ({ url }) => {
                 {/* Info */}
                 <div>
                   {/* name */}
-                  <p className="capitalize font-bold text-3xl text-center md:text-left flex flex-col md:px-4">
-                    <span className="text-num font-pixel text-2xl font-medium">
+                  <p className="capitalize font-bold text-center md:text-left flex flex-col md:px-4 text-2xl md:text-3xl">
+                    <span className="text-num font-pixel text-xs font-medium md:text-sm">
                       #{pokemon.id.toString().padStart(4, "0")}
                     </span>
                     {pokemon.name}{" "}
@@ -203,7 +203,7 @@ const PokemonCard = ({ url }) => {
                     <div className="md:flex md:flex-col md:justify-between">
                       {/* Types */}
                       <div className="mt-2 px-4 py-2">
-                        <p className="font-semibold mb-2 text-base font-pix md:text-lg">
+                        <p className="font-semibold mb-2 text-xs font-pix md:text-sm">
                           TYPES
                         </p>
                         <div className="flex gap-2 flex-wrap">
@@ -222,10 +222,10 @@ const PokemonCard = ({ url }) => {
 
                       {/* Weaknesses (Dynamic!) */}
                       <div className="mt-2 px-4 py-2">
-                        <p className="font-semibold mb-2 text-base font-pix md:text-lg">
+                        <p className="font-semibold mb-2 text-xs font-pix md:text-sm">
                           WEAKNESSES
                         </p>
-                        <div className="flex flex-wrap gap-2 md:grid md:grid-cols-2">
+                        <div className="flex flex-wrap gap-x-2 gap-y-4 md:grid md:grid-cols-2">
                           {weaknesses.length > 0 ? (
                             weaknesses.map((type) => (
                               <span
@@ -248,7 +248,7 @@ const PokemonCard = ({ url }) => {
 
                     {/* Base Stats */}
                     <div className="mt-2 px-4 py-2 md:w-72">
-                      <p className="font-semibold mb-2 text-base font-pix md:text-lg">
+                      <p className="font-semibold mb-2 text-xs font-pix md:text-sm">
                         BATTLE STATS
                       </p>
                       <div className="space-y-1">
@@ -277,7 +277,7 @@ const PokemonCard = ({ url }) => {
                     {/* Add to Team */}
                     <button
                       onClick={handleAddToTeam}
-                      className="btn bg-button text-w text-pix md:text-base hover:bg-custom border-none btn-sm mt-4 w-1/2 rounded-lg mb-4"
+                      className="btn bg-button text-w text-sm md:text-lg hover:bg-custom border-none btn-sm mt-4 w-1/2 rounded-lg mb-4 font-bold tracking-wider"
                     >
                       ADD TO TEAM
                     </button>

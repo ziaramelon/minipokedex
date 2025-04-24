@@ -51,8 +51,7 @@ const Battle = () => {
             setBattleResults(parsedData.battleResults);
           if (parsedData.overallWinner)
             setOverallWinner(parsedData.overallWinner);
-          if (parsedData.loser)
-            setLoser(parsedData.loser);
+          if (parsedData.loser) setLoser(parsedData.loser);
         }
       } catch (error) {
         console.error("Error loading saved battle state:", error);
@@ -256,18 +255,18 @@ const Battle = () => {
             </div>
           </div>
         </div>
-        
+
         {/* The LOSE overlay - only show if this pokemon is the loser */}
         {isLoser && (
           <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
-            <img 
-              src={loseImg} 
-              alt="LOSE" 
+            <img
+              src={loseImg}
+              alt="LOSE"
               className="w-full transform rotate-[-20deg] z-2"
-              style={{ 
-                maxWidth: "120%", 
-                marginLeft: "-10%", 
-                marginTop: "-5%"
+              style={{
+                maxWidth: "120%",
+                marginLeft: "-10%",
+                marginTop: "-5%",
               }}
             />
           </div>
@@ -291,8 +290,8 @@ const Battle = () => {
 
   return (
     <div className="container mx-auto lg:px-16 pb-12">
-      <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center font-serif mt-8 text-gray-800">
-        <span className="text-yellow-500">Pokémon</span> Battle Arena
+      <h2 className="text-4xl md:text-6xl font-bold mb-6 text-center font-pixel text-shadow-lg mt-8 text-red-400">
+        Pokémon Battle Arena
       </h2>
 
       <div className="grid md:grid-cols-3 place-items-center gap-6">

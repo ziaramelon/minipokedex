@@ -11,7 +11,7 @@ const Header = () => {
       <div className="navbar-start">
         <NavLink
           to="/"
-          className="btn btn-ghost text-xl uppercase p-0 flex items-center gap-1 lg:text-4xl font-pixel hover:bg-custom"
+          className="btn btn-ghost text-xl p-0 flex items-center gap-1 lg:text-xl font-pix hover:bg-custom"
         >
           <img src={DBall} alt="Pokemon logo" className="size-12" />
           Pokémon
@@ -19,7 +19,7 @@ const Header = () => {
       </div>
 
       <div className="navbar-end hidden md:flex">
-        <ul className="menu menu-horizontal px-1 lg:text-2xl font-pixel">
+        <ul className="menu menu-horizontal px-1 lg:text-xs font-pix">
           <li>
             <NavLink to="/home" className={linkClasses}>
               Pokédex

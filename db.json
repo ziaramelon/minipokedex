@@ -154,6 +154,37 @@
           "base": 90
         }
       ]
+    },
+    {
+      "id": "7f1e",
+      "name": "ivysaur",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+      "stats": [
+        {
+          "name": "hp",
+          "base": 60
+        },
+        {
+          "name": "attack",
+          "base": 62
+        },
+        {
+          "name": "defense",
+          "base": 63
+        },
+        {
+          "name": "special-attack",
+          "base": 80
+        },
+        {
+          "name": "special-defense",
+          "base": 80
+        },
+        {
+          "name": "speed",
+          "base": 60
+        }
+      ]
     }
   ],
   "battles": [
@@ -233,6 +264,27 @@
       "pokemon2": "bulbasaur",
       "result": "venusaur, You Win!",
       "date": "2025-04-23T13:59:35.347Z"
+    },
+    {
+      "id": "d79b",
+      "pokemon1": "pikachu",
+      "pokemon2": "flareon",
+      "result": "flareon, You Lose!",
+      "date": "2025-04-24T06:40:41.751Z"
+    },
+    {
+      "id": "7458",
+      "pokemon1": "ekans",
+      "pokemon2": "onix",
+      "result": "It's a Draw!",
+      "date": "2025-04-24T06:50:03.993Z"
+    },
+    {
+      "id": "96e5",
+      "pokemon1": "ekans",
+      "pokemon2": "horsea",
+      "result": "ekans, You Win!",
+      "date": "2025-04-24T06:50:20.381Z"
     }
   ]
 }

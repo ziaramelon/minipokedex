@@ -46,7 +46,7 @@ const History = () => {
       <Header />
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-4xl font-bold text-yellow-500 font-serif">
+          <h2 className="text-2xl md:text-4xl font-bold text-yellow-500 font-pixel tracking-wider text-shadow-lg">
             Battle History
           </h2>
           <button
